@@ -1,0 +1,359 @@
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2ECC71;
+    --background-color: #FFFFFF;
+    --text-color: #333333;
+    --border-radius: 8px;
+    --tab-height: 40px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 400px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    padding: 16px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+#motivational-message {
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.timer-container {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.timer-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 8px solid var(--primary-color);
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer-display {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+section {
+    margin-bottom: 24px;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+}
+
+.task-list, .blocked-sites-list {
+    list-style: none;
+}
+
+.task-list li, .blocked-sites-list li {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #f5f5f5;
+    margin-bottom: 8px;
+    border-radius: var(--border-radius);
+}
+
+.task-list input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.remove-btn {
+    margin-left: auto;
+    background-color: #ff4444;
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.timer-settings {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: var(--border-radius);
+}
+
+.timer-settings label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.timer-settings input[type="number"] {
+    width: 60px;
+    padding: 4px;
+    margin-left: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.timer-settings button {
+    margin-top: 8px;
+    width: 100%;
+}
+
+#block-type {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    margin-right: 8px;
+    background-color: white;
+}
+
+.block-stats {
+    margin: 16px 0;
+    padding: 12px;
+    background-color: #f5f5f5;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+}
+
+.block-stats p {
+    margin: 4px 0;
+}
+
+.block-stats span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    opacity: 1;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.3s;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Daily Goal Section */
+.daily-goal {
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: var(--border-radius);
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--secondary-color);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Block Schedule Section */
+.block-schedule {
+    margin: 20px 0;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: var(--border-radius);
+}
+
+.schedule-input {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#schedule-days {
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 4px;
+}
+
+.time-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time-range input[type="time"] {
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.schedule-list {
+    margin-top: 16px;
+    list-style: none;
+}
+
+.schedule-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: white;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+
+/* Statistics Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background-color: #f5f5f5;
+    padding: 16px;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.stat-card p {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.weekly-chart {
+    background-color: white;
+    padding: 16px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.weekly-chart h3 {
+    margin-bottom: 16px;
+    color: var(--text-color);
+}
+
+/* Sound Settings */
+.sound-settings {
+    margin: 12px 0;
+}
+
+.sound-settings label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.block-type-badge {
+    font-size: 12px;
+    padding: 2px 6px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    margin-left: 8px;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="64" cy="64" r="60" fill="#4A90E2"/>
+    
+    <!-- Clock hands -->
+    <path d="M64 64 L64 32" stroke="white" stroke-width="6" stroke-linecap="round"/>
+    <path d="M64 64 L88 64" stroke="white" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- Decorative circles -->
+    <circle cx="64" cy="64" r="4" fill="white"/>
+    
+    <!-- Focus elements -->
+    <circle cx="64" cy="64" r="52" fill="none" stroke="white" stroke-width="2" stroke-dasharray="4,4"/>
+    
+    <!-- Leaf elements for the "buddy" aspect -->
+    <path d="M85 35 Q100 20 110 35 Q120 50 110 65 Q100 80 85 65 Q70 50 85 35" fill="#2ECC71"/>
+    <path d="M43 35 Q28 20 18 35 Q8 50 18 65 Q28 80 43 65 Q58 50 43 35" fill="#2ECC71"/>
+</svg>

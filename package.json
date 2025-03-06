@@ -1,0 +1,11 @@
+{
+  "name": "focus-buddy",
+  "version": "1.0.0",
+  "description": "A Chrome extension to help users stay focused and productive",
+  "scripts": {
+    "convert-icons": "node convert-icons.js"
+  },
+  "dependencies": {
+    "sharp": "^0.32.1"
+  }
+}

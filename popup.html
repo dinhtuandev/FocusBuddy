@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Focus Buddy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-brain"></i> Focus Buddy</h1>
+    </div>
+
+    <div class="tab-navigation">
+        <button class="tab-btn active" data-tab="timer">
+            <i class="fas fa-hourglass-half"></i> Timer
+        </button>
+        <button class="tab-btn" data-tab="tasks">
+            <i class="fas fa-tasks"></i> Tasks
+        </button>
+        <button class="tab-btn" data-tab="stats">
+            <i class="fas fa-chart-line"></i> Stats
+        </button>
+    </div>
+
+    <div id="timer" class="tab-content active">
+        <div class="timer-section">
+            <div class="timer-display">25:00</div>
+            <div class="timer-controls">
+                <button class="btn btn-primary" id="startTimer">
+                    <i class="fas fa-play"></i> Start
+                </button>
+                <button class="btn btn-secondary" id="pauseTimer" disabled>
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button class="btn btn-danger" id="resetTimer">
+                    <i class="fas fa-undo"></i> Reset
+                </button>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <div class="task-input-group">
+                <input type="text" id="taskInput" class="task-input" placeholder="Add a new task...">
+                <button class="btn btn-primary" id="addTaskBtn">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+            <ul id="taskList" class="task-list"></ul>
+        </div>
+
+        <div class="blocking-section">
+            <div class="website-input-group">
+                <input type="text" class="website-input" placeholder="Enter website URL...">
+                <select class="form-control" id="blockType">
+                    <option value="full">Full Block</option>
+                    <option value="delay">5min Delay</option>
+                </select>
+            </div>
+            <ul class="blocked-sites-list"></ul>
+            <button class="btn btn-danger" id="toggleBlocking" style="width: 100%; margin-top: 16px;">
+                <i class="fas fa-shield-alt"></i> Start Blocking
+            </button>
+        </div>
+    </div>
+
+    <div id="tasks" class="tab-content">
+        <div class="task-section">
+            <h2><i class="fas fa-clipboard-list"></i> Today's Tasks</h2>
+            <div class="task-input-group">
+                <input type="text" class="task-input" placeholder="What do you need to focus on?">
+                <button class="btn btn-primary" id="addTaskTab">
+                    <i class="fas fa-plus-circle"></i> Add Task
+                </button>
+            </div>
+            <ul class="task-list-tab"></ul>
+        </div>
+    </div>
+
+    <div id="stats" class="tab-content">
+        <div class="stats-section">
+            <h2><i class="fas fa-chart-pie"></i> Your Focus Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-clock fa-2x" style="color: var(--primary-color); margin-bottom: 12px;"></i>
+                    <div class="stat-value" id="totalFocusTime">0</div>
+                    <div class="stat-label">Focus Hours</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle fa-2x" style="color: var(--success-color); margin-bottom: 12px;"></i>
+                    <div class="stat-value" id="completedSessions">0</div>
+                    <div class="stat-label">Completed Sessions</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tasks fa-2x" style="color: var(--warning-color); margin-bottom: 12px;"></i>
+                    <div class="stat-value" id="completedTasks">0</div>
+                    <div class="stat-label">Tasks Completed</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-trophy fa-2x" style="color: var(--secondary-color); margin-bottom: 12px;"></i>
+                    <div class="stat-value" id="successRate">0%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/popup.js"></script>
+</body>
+</html>

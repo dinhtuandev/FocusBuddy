@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Blocked - Focus Buddy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #4A90E2;
+            margin-bottom: 1rem;
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #2ECC71;
+        }
+
+        .message {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .timer {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #4A90E2;
+        }
+
+        .suggestion {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+
+        .suggestion h2 {
+            color: #2ECC71;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .suggestion ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .suggestion li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .suggestion li:before {
+            content: "•";
+            color: #2ECC71;
+            position: absolute;
+            left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">🎯</div>
+        <h1>Stay Focused!</h1>
+        <div class="message">
+            <p>This site is currently blocked to help you stay productive.</p>
+            <p>Remember why you set this goal for yourself!</p>
+        </div>
+        <div class="timer" id="focus-timer">
+            <!-- Timer will be inserted by JavaScript -->
+        </div>
+        <div class="suggestion">
+            <h2>Instead of browsing, why not:</h2>
+            <ul>
+                <li>Take a deep breath and return to your task</li>
+                <li>Stand up and stretch for a minute</li>
+                <li>Drink some water</li>
+                <li>Review your to-do list</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Update the timer
+        function updateTimer() {
+            chrome.storage.sync.get(['workDuration', 'timeLeft'], (data) => {
+                const minutes = Math.floor(data.timeLeft / 60);
+                const seconds = data.timeLeft % 60;
+                document.getElementById('focus-timer').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            });
+        }
+
+        // Update timer every second
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
