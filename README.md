@@ -1,3 +1,4 @@
-# FocusBuddy
-a extensions that similar focus time, have to do list, and more..
-https://github.com/dinhtuandev/FocusBuddy/issues/1#issue-2899457421
+# FocusBuddy Demo
+![FocusBuddy Demo](https://raw.githubusercontent.com/dinhtuandev/FocusBuddy/main/1.png)
+![FocusBuddy Demo](https://raw.githubusercontent.com/dinhtuandev/FocusBuddy/main/2.png)
+![FocusBuddy Demo](https://raw.githubusercontent.com/dinhtuandev/FocusBuddy/main/3.png)
